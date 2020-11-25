@@ -19,12 +19,7 @@ const LibrarySong = ({song, setCurrentSong, audioRef, isPlaying, id, setSongs, s
      });
      setSongs(newSongs)
         //test if song is playing
-        if(isPlaying){
-            const playPromise = audioRef.current.play();
-            if(playPromise !== undefined){
-                playPromise.then((audio)=>{audioRef.current.play();})
-            }
-        }
+        
     }
     return(
         <div onClick={songSelectHandler} className={`library-song ${song.active ? 'selected': ""}`}>
