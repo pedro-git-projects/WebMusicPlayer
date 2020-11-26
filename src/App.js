@@ -28,11 +28,31 @@ function App() {
     const animation = Math.round((roundedCurrent / roundedDuration)*100)
     setSongInfo({ ...songInfo, currentTime: current, duration: duration, animationPercentage: animation, });
   };
-  const songEndHandler = async () => {
-    let currentIndex = songs.findIndex((Song) => Song.id === currentSong.id);
-    await  setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    if(isPlaying) audioRef.current.play();
+  const activeLibraryHandler = (nextPrevious) => {
+    const newSongs = songs.map((song) => {
+      if(song.id === nextPrevious.id){
+          return {
+              ...song,
+              active: true,
+          };
+      } else {
+          return{
+              ...song,
+              active: false,
+          }
+      }
+  });
+  setSongs(newSongs);  
   }
+
+  const songEndHandler = async () => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
+    if (isPlaying) audioRef.current.play();
+    // playAudio(isPlaying, audioRef);
+    return;
+  };
   return (
     <div className={`App ${libraryStatus ? "library-active": ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
