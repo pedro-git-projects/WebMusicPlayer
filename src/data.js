@@ -25,10 +25,10 @@ function Music() {
     {
         name:"Crossed Rainbow",
         artist: "Hardwired Lofi",
-        cover: "http://p.favim.com/orig/2018/12/22/aesthetic-aesthetic-rainbow-pic-Favim.com-6686833.jpg",
+        cover: "https://i.pinimg.com/originals/35/ee/b2/35eeb22d79cc884aa35801cc3dc26925.jpg",
         id: uuidv4(),
         active: false,
-        color: ["#DDA081", "#B9B77E","#86B48B","#747B8E","#707C8F"],
+        color: ["#F29585", "#FAE77A","#BCFDA8","#72A7EB","#8876C5"],
         audio: "https://media1.vocaroo.com/mp3/1kYiOivSIG0K",
     },
 
