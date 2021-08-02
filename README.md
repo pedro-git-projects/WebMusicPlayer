@@ -18,6 +18,6 @@ The second was to provide myself with a website to host the songs I make in my f
 
 The application is hosted [here](https://hardwired-lofi.netlify.app/)
 
-## Print
+## Screenshot
 
 ![Music Player](public/print/hardwired.png "My application running on netlify")
