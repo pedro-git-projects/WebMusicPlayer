@@ -1,4 +1,4 @@
-# Hardwired Lo-fi Music App With React
+# Music App With React
 
 ## Objective
 
